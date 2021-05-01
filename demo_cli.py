@@ -1,4 +1,8 @@
 from encoder.params_model import model_embedding_size as speaker_embedding_size
+#importing functions/commands from the params_model file in the encoder folder
+#specifically importing model_embedding_size but calling it speaker_embedding_size
+
+
 from utils.argutils import print_args
 from synthesizer.inference import Synthesizer
 from encoder import inference as encoder
@@ -77,6 +81,15 @@ if __name__ == '__main__':
     # The sampling rate is the number of values (samples) recorded per second, it is set to
     # 16000 for the encoder. Creating an array of length <sampling_rate> will always correspond 
     # to an audio of 1 second.
+    
+    #if you recorded a sound every other second on a 10 second recording, your sampling rate would be 0.5 (5/10) = 1/sampling interval = 1/2
+    #they are saying that the sampling rate is 16 thousand samples per second
+    #they are saying that digital audio is encoded as an array of floats between -1 and 1
+    #they are saying that if you created an array with size/length of 16 thousand, since the sampling rate is 16 thousand per second, the audio would only be 1 second
+    #encoder encodes.. turning audio into code a computer can interpret is encoding. dolphinese. 
+    
+    
+    
     print("\tTesting the encoder...")
     encoder.embed_utterance(np.zeros(encoder.sampling_rate))
     
